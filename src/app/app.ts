@@ -12,8 +12,7 @@ import { CommonModule } from '@angular/common';
   standalone: true
 })
 export class App {
-  protected title = 'ToDoList';
-  
+  protected title = 'ToDoList'; 
   
   descripcion: string = '';
   tareasPendientes: {Tareaid: number, nombre: string}[] = [];
