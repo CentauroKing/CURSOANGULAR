@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-mi-item',
@@ -8,8 +8,15 @@ import { Component } from '@angular/core';
 })
 export class MiItem {
 
+  @Input() descripcion: string = '';
+
   tareasPendientes: {Tareaid: number, nombre: string}[] = [];
-  
+  insertaTarea() {
+    if (this.descripcion.trim() !== '') {
+      this.tareasPendientes.push({ Tareaid: this.tareasPendientes.length + 1, nombre: this.descripcion });
+      this.descripcion = '';
+    }
+  }
   eliminaTarea(tareaId: number) {
     this.tareasPendientes = this.tareasPendientes.filter(t => t.Tareaid !== tareaId);
   } 
