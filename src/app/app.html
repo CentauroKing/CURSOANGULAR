@@ -2,13 +2,13 @@
   <div class="content">
     <div class="left-side">
      
-      <h1>Creación de Lista de Tareas Pendientes, {{ title }}</h1>
+      <h1>Creación de Lista de Tareas Pendientes: {{ title }}</h1>
       <input type = "text"  [(ngModel)]="descripcion" placeholder="Ingresa la tarea pendiente" />
       <button (click)="insertaTarea()">Añadir Tarea</button>
       @for (mitarea of tareasPendientes; track mitarea.Tareaid) {
         <div class="tarea">
-          <span>{{ mitarea.nombre }}</span>
-          <button (click)="eliminaTarea(mitarea.Tareaid)">Eliminar</button>
+          <span>{{ mitarea.nombre }}    </span>
+          <button (click)="eliminaTarea(mitarea.Tareaid)">Tarea Completada</button>
         </div>
       }
     </div>

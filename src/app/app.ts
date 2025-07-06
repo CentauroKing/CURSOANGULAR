@@ -14,16 +14,15 @@ import { CommonModule } from '@angular/common';
 export class App {
   protected title = 'ToDoList'; 
   
-  descripcion: string = '';
-  tareasPendientes: {Tareaid: number, nombre: string}[] = [];
-  insertaTarea() {
-    if (this.descripcion.trim() !== '') {
-      this.tareasPendientes.push({ Tareaid: this.tareasPendientes.length + 1, nombre: this.descripcion });
-      this.descripcion = '';
-    }
+  porTeclado: string = '';
+  tareasPendientesPadre: Tarea[] = [];
+  
+  obtenerTareas(vieneTareas: Tarea[]) {
+    this.tareasPendientesPadre = vieneTareas;
   }
-  eliminaTarea(tareaId: number) {
-    this.tareasPendientes = this.tareasPendientes.filter(t => t.Tareaid !== tareaId);
-  } 
 }
 
+export type Tarea = {
+  tareaId: number;
+  tareaNombre: string;
+}
