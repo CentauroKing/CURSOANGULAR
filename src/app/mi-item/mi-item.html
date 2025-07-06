@@ -1,1 +1,7 @@
 <p>mi-item works!</p>
+ @for (mitarea of tareasPendientes; track mitarea.Tareaid) {
+        <div class="tarea">
+          <span>{{ mitarea.nombre }}  </span>
+          <button (click)="eliminaTarea(mitarea.Tareaid)">Eliminar</button>
+        </div>
+      }

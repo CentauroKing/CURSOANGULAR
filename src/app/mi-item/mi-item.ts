@@ -8,6 +8,8 @@ import { Component , Input, Output, EventEmitter } from '@angular/core';
 })
 export class MiItem {
 
+  @Input() descripcion: string = '';
+
   @Input() tareasPendientes: Tarea[] = [];
   @Input() tareaNueva: string = '';
   @Output() variableEmisoraHijo: EventEmitter <any> = new EventEmitter();
